@@ -1,0 +1,7 @@
+girl_news_pipeline:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DB_PATH', '../data/warehouse.duckdb') }}"
+      threads: 1

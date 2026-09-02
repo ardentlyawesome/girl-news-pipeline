@@ -1,0 +1,58 @@
+include_keywords:
+  - women
+  - gender
+  - dalit women
+  - sexual harassment
+  - domestic violence
+  - women's rights
+  - maternity
+  - menstrual
+  - women safety
+  - rape case
+  - dowry
+  - women farmers
+  - girl child
+  - women entrepreneurs
+  - pay gap
+  - reservation women
+  - feminist
+  - feminism
+  - gender equality
+  - girl education
+  - women in politics
+  - trafficking
+  - acid attack
+  - maternal health
+  - child marriage
+
+# Per-source exclude rules — matched against categories or title
+exclude_rules:
+  shethepeople:
+    categories:
+      - Web Stories
+      - Entertainment
+      - Celebrity
+      - Lifestyle
+      - Beauty
+      - Fashion
+      - Travel
+      - Food
+      - Horoscope
+    title_keywords:
+      - film review
+      - movie review
+      - web series review
+      - OTT review
+      - recipe
+      - horoscope
+      # sports results (google_news tends to flood with these)
+      - cricket
+      - asia cup
+      - champions trophy
+      - live streaming
+      - match preview
+      - mutual funds
+
+# Digest settings
+digest_max_articles: 10
+dedup_fuzzy_threshold: 90  # rapidfuzz token_sort_ratio threshold

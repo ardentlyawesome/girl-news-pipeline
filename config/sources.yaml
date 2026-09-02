@@ -1,0 +1,12 @@
+sources:
+  - name: feminism_in_india
+    url: https://feminisminindia.com/feed/
+    display_name: "Feminism in India"
+
+  - name: shethepeople
+    url: https://www.shethepeople.tv/rss
+    display_name: "SheThePeople.TV"
+
+  - name: google_news
+    url: "https://news.google.com/rss/search?q=women+india&hl=en-IN&gl=IN&ceid=IN:en"
+    display_name: "Google News (Women India)"
