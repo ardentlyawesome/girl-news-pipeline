@@ -1,12 +1,63 @@
+# RSS sources. `section_hint` biases classification for query-specific feeds
+# (a feed built from an assault query is probably assault news), but keyword
+# scoring in dbt still has the final say.
+
 sources:
+  # --- India editorial / gender-focused ---
   - name: feminism_in_india
-    url: https://feminisminindia.com/feed/
     display_name: "Feminism in India"
+    url: https://feminisminindia.com/feed/
+    section_hint: null
 
   - name: shethepeople
-    url: https://www.shethepeople.tv/rss
     display_name: "SheThePeople.TV"
+    url: https://www.shethepeople.tv/rss
+    section_hint: null
 
-  - name: google_news
-    url: "https://news.google.com/rss/search?q=women+india&hl=en-IN&gl=IN&ceid=IN:en"
-    display_name: "Google News (Women India)"
+  - name: the_wire
+    display_name: "The Wire"
+    url: https://thewire.in/rss
+    section_hint: null
+
+  - name: scroll
+    display_name: "Scroll.in"
+    url: https://scroll.in/feed
+    section_hint: null
+
+  # --- India mainstream ---
+  - name: the_hindu_national
+    display_name: "The Hindu"
+    url: https://www.thehindu.com/news/national/feeder/default.rss
+    section_hint: null
+
+  - name: indian_express
+    display_name: "The Indian Express"
+    url: https://indianexpress.com/section/india/feed/
+    section_hint: null
+
+  # --- Topic-targeted Google News queries ---
+  - name: google_safety
+    display_name: "Google News"
+    url: "https://news.google.com/rss/search?q=(rape+OR+%22sexual+assault%22+OR+%22domestic+violence%22+OR+%22acid+attack%22+OR+dowry+OR+trafficking)+(woman+OR+women+OR+girl)+india&hl=en-IN&gl=IN&ceid=IN:en"
+    section_hint: safety
+
+  - name: google_policy
+    display_name: "Google News"
+    url: "https://news.google.com/rss/search?q=women+india+(court+OR+verdict+OR+judgment+OR+NCRB+OR+bill+OR+policy+OR+commission)&hl=en-IN&gl=IN&ceid=IN:en"
+    section_hint: policy
+
+  - name: google_work
+    display_name: "Google News"
+    url: "https://news.google.com/rss/search?q=india+(%22women+workers%22+OR+%22women+entrepreneurs%22+OR+%22self-help+group%22+OR+%22women+farmers%22+OR+%22gender+pay%22)&hl=en-IN&gl=IN&ceid=IN:en"
+    section_hint: work
+
+  # --- Health & research (global) ---
+  - name: pubmed_women_health
+    display_name: "PubMed"
+    url: "https://pubmed.ncbi.nlm.nih.gov/rss/search/?term=%28women%5BTitle%5D+OR+maternal%5BTitle%5D+OR+%22gender-based+violence%22%5BTitle%5D%29+AND+%28health+OR+mortality+OR+violence%29&limit=25"
+    section_hint: health
+
+  - name: who_news
+    display_name: "WHO"
+    url: https://www.who.int/rss-feeds/news-English.xml
+    section_hint: health
